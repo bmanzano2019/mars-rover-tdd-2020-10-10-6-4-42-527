@@ -9,7 +9,7 @@ class MarsRoverTest {
         initial x = 0, y = 0, direction = NORTH
      */
     @Test
-    void should_x0_y1_directionNORTH_when_execute_given_x0_y0_directionNORTH_command_MOVE() {
+    void should_x0_y1_directionNORTH_when_execute_given_x0_y0_directionNORTH_command_MOVE() throws CommandNotDefinedException {
         // given
         int x = 0;
         int y = 0;
@@ -31,7 +31,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_x0_y0_directionWEST_when_execute_given_x0_y0_directionNORTH_command_LEFT() {
+    void should_x0_y0_directionWEST_when_execute_given_x0_y0_directionNORTH_command_LEFT() throws CommandNotDefinedException {
         // given
         int x = 0;
         int y = 0;
@@ -53,7 +53,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_x0_y0_directionEAST_when_execute_given_x0_y0_directionNORTH_command_RIGHT() {
+    void should_x0_y0_directionEAST_when_execute_given_x0_y0_directionNORTH_command_RIGHT() throws CommandNotDefinedException {
         // given
         int x = 0;
         int y = 0;
@@ -78,7 +78,7 @@ class MarsRoverTest {
         initial x = 0, y = 0, direction = SOUTH
      */
     @Test
-    void should_x0_yMINUS1_directionSOUTH_when_execute_given_x0_y0_directionSOUTH_command_MOVE() {
+    void should_x0_yMINUS1_directionSOUTH_when_execute_given_x0_y0_directionSOUTH_command_MOVE() throws CommandNotDefinedException {
         // given
         int x = 0;
         int y = 0;
@@ -100,7 +100,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_x0_y0_directionEAST_when_execute_given_x0_y0_directionSOUTH_command_LEFT() {
+    void should_x0_y0_directionEAST_when_execute_given_x0_y0_directionSOUTH_command_LEFT() throws CommandNotDefinedException {
         // given
         int x = 0;
         int y = 0;
@@ -122,7 +122,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_x0_y0_directionWEST_when_execute_given_x0_y0_directionSOUTH_command_RIGHT() {
+    void should_x0_y0_directionWEST_when_execute_given_x0_y0_directionSOUTH_command_RIGHT() throws CommandNotDefinedException {
         // given
         int x = 0;
         int y = 0;
@@ -147,7 +147,7 @@ class MarsRoverTest {
         initial x = 0, y = 0, direction = EAST
      */
     @Test
-    void should_x1_y0_directionEAST_when_execute_given_x0_y0_directionEAST_command_MOVE() {
+    void should_x1_y0_directionEAST_when_execute_given_x0_y0_directionEAST_command_MOVE() throws CommandNotDefinedException {
         // given
         int x = 0;
         int y = 0;
@@ -169,7 +169,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_x0_y0_directionNORTH_when_execute_given_x0_y0_directionEAST_command_LEFT() {
+    void should_x0_y0_directionNORTH_when_execute_given_x0_y0_directionEAST_command_LEFT() throws CommandNotDefinedException {
         // given
         int x = 0;
         int y = 0;
@@ -191,7 +191,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_x0_y0_directionSOUTH_when_execute_given_x0_y0_directionEAST_command_RIGHT() {
+    void should_x0_y0_directionSOUTH_when_execute_given_x0_y0_directionEAST_command_RIGHT() throws CommandNotDefinedException {
         // given
         int x = 0;
         int y = 0;
@@ -216,7 +216,7 @@ class MarsRoverTest {
         initial x = 0, y = 0, direction = WEST
      */
     @Test
-    void should_xMINUS1_y0_directionWEST_when_execute_given_x0_y0_directionWEST_command_MOVE() {
+    void should_xMINUS1_y0_directionWEST_when_execute_given_x0_y0_directionWEST_command_MOVE() throws CommandNotDefinedException {
         // given
         int x = 0;
         int y = 0;
@@ -238,7 +238,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_x0_y0_directionSOUTH_when_execute_given_x0_y0_directionWEST_command_LEFT() {
+    void should_x0_y0_directionSOUTH_when_execute_given_x0_y0_directionWEST_command_LEFT() throws CommandNotDefinedException {
         // given
         int x = 0;
         int y = 0;
@@ -260,7 +260,7 @@ class MarsRoverTest {
     }
 
     @Test
-    void should_x0_y0_directionNORTH_when_execute_given_x0_y0_directionWEST_command_RIGHT() {
+    void should_x0_y0_directionNORTH_when_execute_given_x0_y0_directionWEST_command_RIGHT() throws CommandNotDefinedException {
         // given
         int x = 0;
         int y = 0;
