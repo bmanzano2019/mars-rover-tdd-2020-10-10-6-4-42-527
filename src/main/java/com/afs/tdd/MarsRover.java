@@ -5,6 +5,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MarsRover {
     private int coordX;
@@ -16,6 +17,13 @@ public class MarsRover {
                     MOVEMENT_KEYWORDS.EAST,
                     MOVEMENT_KEYWORDS.SOUTH,
                     MOVEMENT_KEYWORDS.WEST)
+    );
+    private List<String> validCommands = new ArrayList<>(
+            Arrays.asList(
+                    MOVEMENT_KEYWORDS.MOVE_KEY,
+                    MOVEMENT_KEYWORDS.TURN_LEFT_KEY,
+                    MOVEMENT_KEYWORDS.TURN_RIGHT_KEY
+            )
     );
 
     public MarsRover(int coordX, int coordY, String direction) {
@@ -36,17 +44,20 @@ public class MarsRover {
         return direction;
     }
 
-    public void performCommands(String commands) {
+    public void performCommands(String commands) throws CommandNotDefinedException {
         if (!checkIfValidCommands(commands)) {
-            return;
+            throw new CommandNotDefinedException();
         }
 
         Arrays.asList(commands.split("")).forEach(this::parseCommand);
     }
 
     private boolean checkIfValidCommands(String commands) {
-        // TBI
-        return true;
+        String filteredCommands = Arrays.stream(commands.split(""))
+                .filter(command -> validCommands.contains(command))
+                .collect(Collectors.joining());
+
+        return filteredCommands.equals(commands);
     }
 
     private void parseCommand(String command) {
