@@ -5,15 +5,6 @@ import org.junit.jupiter.api.Test;
 
 class MarsRoverTest {
 
-    private static final String NORTH = "N";
-    private static final String SOUTH = "S";
-    private static final String EAST = "E";
-    private static final String WEST = "W";
-
-    private static final String MOVE_KEY = "M";
-    private static final String TURN_LEFT_KEY = "L";
-    private static final String TURN_RIGHT_KEY = "R";
-
     /*
         initial x = 0, y = 0, direction = NORTH
      */
@@ -22,12 +13,12 @@ class MarsRoverTest {
         // given
         int x = 0;
         int y = 0;
-        String direction = NORTH;
+        String direction = MOVEMENT_KEYWORDS.NORTH;
 
-        String commands = MOVE_KEY;
+        String commands = MOVEMENT_KEYWORDS.MOVE_KEY;
         int expectedX = 0;
         int expectedY = 1;
-        String expectedDirection = NORTH;
+        String expectedDirection = MOVEMENT_KEYWORDS.NORTH;
 
         // when
         MarsRover rover = new MarsRover(x, y, direction);
@@ -44,12 +35,12 @@ class MarsRoverTest {
         // given
         int x = 0;
         int y = 0;
-        String direction = NORTH;
+        String direction = MOVEMENT_KEYWORDS.NORTH;
 
-        String commands = TURN_LEFT_KEY;
+        String commands = MOVEMENT_KEYWORDS.TURN_LEFT_KEY;
         int expectedX = 0;
         int expectedY = 0;
-        String expectedDirection = WEST;
+        String expectedDirection = MOVEMENT_KEYWORDS.WEST;
 
         // when
         MarsRover rover = new MarsRover(x, y, direction);
@@ -66,12 +57,12 @@ class MarsRoverTest {
         // given
         int x = 0;
         int y = 0;
-        String direction = NORTH;
+        String direction = MOVEMENT_KEYWORDS.NORTH;
 
-        String commands = TURN_RIGHT_KEY;
+        String commands = MOVEMENT_KEYWORDS.TURN_RIGHT_KEY;
         int expectedX = 0;
         int expectedY = 0;
-        String expectedDirection = EAST;
+        String expectedDirection = MOVEMENT_KEYWORDS.EAST;
 
         // when
         MarsRover rover = new MarsRover(x, y, direction);
@@ -91,12 +82,12 @@ class MarsRoverTest {
         // given
         int x = 0;
         int y = 0;
-        String direction = SOUTH;
+        String direction = MOVEMENT_KEYWORDS.SOUTH;
 
-        String commands = MOVE_KEY;
+        String commands = MOVEMENT_KEYWORDS.MOVE_KEY;
         int expectedX = 0;
         int expectedY = -1;
-        String expectedDirection = SOUTH;
+        String expectedDirection = MOVEMENT_KEYWORDS.SOUTH;
 
         // when
         MarsRover rover = new MarsRover(x, y, direction);
@@ -113,12 +104,12 @@ class MarsRoverTest {
         // given
         int x = 0;
         int y = 0;
-        String direction = SOUTH;
+        String direction = MOVEMENT_KEYWORDS.SOUTH;
 
-        String commands = TURN_LEFT_KEY;
+        String commands = MOVEMENT_KEYWORDS.TURN_LEFT_KEY;
         int expectedX = 0;
         int expectedY = 0;
-        String expectedDirection = EAST;
+        String expectedDirection = MOVEMENT_KEYWORDS.EAST;
 
         // when
         MarsRover rover = new MarsRover(x, y, direction);
@@ -135,12 +126,12 @@ class MarsRoverTest {
         // given
         int x = 0;
         int y = 0;
-        String direction = SOUTH;
+        String direction = MOVEMENT_KEYWORDS.SOUTH;
 
-        String commands = TURN_RIGHT_KEY;
+        String commands = MOVEMENT_KEYWORDS.TURN_RIGHT_KEY;
         int expectedX = 0;
         int expectedY = 0;
-        String expectedDirection = WEST;
+        String expectedDirection = MOVEMENT_KEYWORDS.WEST;
 
         // when
         MarsRover rover = new MarsRover(x, y, direction);
