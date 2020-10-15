@@ -10,7 +10,7 @@ public class MarsRover {
     private int coordX;
     private int coordY;
     private String direction;
-    private List<String> rotation_mapper = new ArrayList<>(
+    private List<String> rotationMapper = new ArrayList<>(
             Arrays.asList(
                     MOVEMENT_KEYWORDS.NORTH,
                     MOVEMENT_KEYWORDS.EAST,
@@ -52,6 +52,9 @@ public class MarsRover {
     private void parseCommand(String command) {
         if (command.equals(MOVEMENT_KEYWORDS.MOVE_KEY)) {
             move();
+        } else if (command.equals(MOVEMENT_KEYWORDS.TURN_LEFT_KEY)
+                || command.equals(MOVEMENT_KEYWORDS.TURN_RIGHT_KEY)) {
+            turn(command);
         }
     }
 
@@ -74,7 +77,22 @@ public class MarsRover {
         }
     }
 
-    private void turn() {
-        throw new NotImplementedException();
+    private void turn(String command) {
+        int mapIndex = rotationMapper.indexOf(direction);
+
+        if (command.equals(MOVEMENT_KEYWORDS.TURN_LEFT_KEY)) {
+            mapIndex--;
+        } else if (command.equals(MOVEMENT_KEYWORDS.TURN_RIGHT_KEY)) {
+            mapIndex++;
+        }
+
+        // handle out of bound indexes
+        if (mapIndex < 0) {
+            mapIndex += rotationMapper.size();
+        } else if (mapIndex >= rotationMapper.size()) {
+            mapIndex -= rotationMapper.size();
+        }
+
+        direction = rotationMapper.get(mapIndex);
     }
 }
