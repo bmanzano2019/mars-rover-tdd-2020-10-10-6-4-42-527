@@ -10,12 +10,14 @@ class MarsRoverTest {
         int x = 0;
         int y = 0;
         String direction = "N";
+        String commands = "M";
 
         int expectedX = 0;
         int expectedY = 1;
         String expectedDirection = "N";
 
         MarsRover rover = new MarsRover(x, y, direction);
+        rover.performCommands(commands);
 
         Assertions.assertEquals(expectedX, rover.getCoordX());
         Assertions.assertEquals(expectedY, rover.getCoordY());
