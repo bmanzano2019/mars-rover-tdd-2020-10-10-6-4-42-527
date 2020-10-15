@@ -300,4 +300,29 @@ class MarsRoverTest {
         Assertions.assertThrows(CommandNotDefinedException.class, () -> rover.performCommands(commands));
     }
 
+    /*
+        initial x = 0, y = 0, direction = NORTH, give INVALID COMMAND F
+     */
+    @Test
+    void should_xMINUS1_y1_directionNORTH_when_execute_given_x0_y0_directionNORTH_command_MLMR() throws CommandNotDefinedException {
+        // given
+        int x = 0;
+        int y = 0;
+        String direction = MOVEMENT_KEYWORDS.NORTH;
+
+        String commands = "MLMR";
+        int expectedX = -1;
+        int expectedY = 1;
+        String expectedDirection = MOVEMENT_KEYWORDS.NORTH;
+
+        // when
+        MarsRover rover = new MarsRover(x, y, direction);
+        rover.performCommands(commands);
+
+        // then
+        Assertions.assertEquals(expectedX, rover.getCoordX());
+        Assertions.assertEquals(expectedY, rover.getCoordY());
+        Assertions.assertEquals(expectedDirection, rover.getDirection());
+    }
+
 }
